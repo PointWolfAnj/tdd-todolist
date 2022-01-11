@@ -37,13 +37,38 @@ class TodoList {
         return this.list[id - 1]
     }
     getIncomplete() {
-        const arr = []
-        for (let i = 0; 1 < this.list.length; i++) {
+        const incomplete = []
+        for (let i = 0; i < this.list.length; i++) {
             if (this.list[i]['status'] === 'incomplete') {
-                arr.push(this.list[i])
+                incomplete.push(this.list[i])
             }
         }
-        return arr
+        return incomplete
+    }
+    getcomplete() {
+        const complete = []
+        for (let i = 0; i < this.list.length; i++) {
+            if (this.list[i]['status'] === 'complete') {
+                complete.push(this.list[i])
+            }
+        }
+        return complete
+    }
+    searchItem(id) {
+        for (let i = 0; i < this.list.length; i++) {
+            if (this.list[i]['id'] === id) {
+                return this.list[i]
+            }
+        }
+        return 'N/A'
+    }
+    removeItem(id) {
+        for (let i = 0; i < this.list.length; i++) {
+            if (this.list[i]['id'] === id) {
+                this.list.splice([i], 1)
+            }
+        }
+        return this.list
     }
 }
 

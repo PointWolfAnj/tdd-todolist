@@ -37,7 +37,8 @@ describe("TodoList", () => {
     // verify
     expect(result).toEqual(expected)
   })
-  it('Set a todo completed by its ID', () => {
+
+it('Set a todo completed by its ID', () => {
     // set up
     const expected = {
       id: 1,
@@ -102,7 +103,8 @@ describe("TodoList", () => {
     // verify
     expect(result).toEqual(expected)
   })
-  it('return a message saying it does not exist', () => {
+
+it('return a message saying it does not exist', () => {
     // set up
     const expected = 'N/A'
 
